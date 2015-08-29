@@ -48,7 +48,6 @@ var key0;
 
 
 function hit1 () {
-	
 	if (hit1Tween !== undefined) {
 		hit1Tween.stop(false);
 	}
@@ -56,32 +55,71 @@ function hit1 () {
 	var hit1Tween = game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit2 () {
-	game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit2Tween !== undefined) {
+		hit2Tween.stop(false);
+	}
+	circles.children[1].scale.setTo(0, 0);
+	var hit2Tween = game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit3 () {
-	game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit3Tween !== undefined) {
+		hit3Tween.stop(false);
+	}
+	circles.children[2].scale.setTo(0, 0);
+	var hit3Tween = game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit4 () {
-	game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit4Tween !== undefined) {
+		hit4Tween.stop(false);
+	}
+	circles.children[3].scale.setTo(0, 0);
+	var hit4Tween = game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit5 () {
-	game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit5tween !== undefined) {
+		hit5Tween.stop(false);
+	}
+	circles.children[4].scale.setTo(0, 0);
+	var hit5Tween = game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit6 () {
-	game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit6tween !== undefined) {
+		hit6Tween.stop(false);
+	}
+	circles.children[5].scale.setTo(0, 0);
+	var hit6Tween = game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit7 () {
-	game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit7tween !== undefined) {
+		hit7Tween.stop(false);
+	}
+	circles.children[6].scale.setTo(0, 0);
+	var hit7Tween = game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit8 () {
-	game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit8tween !== undefined) {
+		hit8Tween.stop(false);
+	}
+	circles.children[7].scale.setTo(0, 0);
+	var hit8Tween = game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit9 () {
-	game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit9tween !== undefined) {
+		hit9Tween.stop(false);
+	}
+	circles.children[8].scale.setTo(0, 0);
+	var hit9Tween = game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit0 () {
-	game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	if (hit10tween !== undefined) {
+		hit10Tween.stop(false);
+	}
+	circles.children[9].scale.setTo(0, 0);
+	var hit10Tween = game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
+
+
+
 
 function preload() {
   game.load.image('circle', 'assets/circle2.png');
