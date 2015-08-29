@@ -22,6 +22,28 @@ if (_socketEnabled) {
 	  socket.on('news', function (data) {
 	    console.log(data);
 	  });
+	  socket.on('hit', function (data) {
+	    console.log(data.sound);
+	    switch(data.sound) {
+	    	case 1:
+	    		hit1();
+	    		break;
+    		case 2:
+    			hit2();
+    			break;
+  			case 3:
+    			hit3();
+    			break;
+  			case 4:
+    			hit4();
+    			break;
+  			case 5:
+    			hit5();
+    			break;
+	    	default:
+	    		break;
+	    }
+	  });
 }
 
 function RGBtoHEX(r, g, b) {
@@ -30,6 +52,7 @@ function RGBtoHEX(r, g, b) {
 
 var game = new Phaser.Game(1280, 720, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 var circles;
+var circleGrowDuration = 2000;
 var text;
 
 // Keyboard input
@@ -44,85 +67,107 @@ var key8;
 var key9;
 var key0;
 
-
-
+// Sounds
+var sfx1;
+var sfx2;
+var sfx3;
+var sfx4;
+var sfx5;
+var sfx6;
+var sfx7;
+var sfx8;
+var sfx9;
+var sfx10;
 
 function hit1 () {
 	if (hit1Tween !== undefined) {
 		hit1Tween.stop(false);
 	}
 	circles.children[0].scale.setTo(0, 0);
-	var hit1Tween = game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit1Tween = game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true )
+	sfx1.play();
 }
 function hit2 () {
 	if (hit2Tween !== undefined) {
 		hit2Tween.stop(false);
 	}
 	circles.children[1].scale.setTo(0, 0);
-	var hit2Tween = game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit2Tween = game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx2.play();
 }
 function hit3 () {
 	if (hit3Tween !== undefined) {
 		hit3Tween.stop(false);
 	}
 	circles.children[2].scale.setTo(0, 0);
-	var hit3Tween = game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit3Tween = game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true )
+	sfx3.play();
 }
 function hit4 () {
 	if (hit4Tween !== undefined) {
 		hit4Tween.stop(false);
 	}
 	circles.children[3].scale.setTo(0, 0);
-	var hit4Tween = game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit4Tween = game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx4.play();
 }
 function hit5 () {
-	if (hit5tween !== undefined) {
+	if (hit5Tween !== undefined) {
 		hit5Tween.stop(false);
 	}
 	circles.children[4].scale.setTo(0, 0);
-	var hit5Tween = game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit5Tween = game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx5.play();
 }
 function hit6 () {
-	if (hit6tween !== undefined) {
+	if (hit6Tween !== undefined) {
 		hit6Tween.stop(false);
 	}
 	circles.children[5].scale.setTo(0, 0);
-	var hit6Tween = game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit6Tween = game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );	
+	sfx6.play();
 }
 function hit7 () {
-	if (hit7tween !== undefined) {
+	if (hit7Tween !== undefined) {
 		hit7Tween.stop(false);
 	}
 	circles.children[6].scale.setTo(0, 0);
-	var hit7Tween = game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit7Tween = game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx7.play();
 }
 function hit8 () {
-	if (hit8tween !== undefined) {
+	if (hit8Tween !== undefined) {
 		hit8Tween.stop(false);
 	}
 	circles.children[7].scale.setTo(0, 0);
-	var hit8Tween = game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit8Tween = game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx8.play();
 }
 function hit9 () {
-	if (hit9tween !== undefined) {
+	if (hit9Tween !== undefined) {
 		hit9Tween.stop(false);
 	}
 	circles.children[8].scale.setTo(0, 0);
-	var hit9Tween = game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit9Tween = game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx9.play();
 }
 function hit0 () {
-	if (hit10tween !== undefined) {
+	if (hit10Tween !== undefined) {
 		hit10Tween.stop(false);
 	}
 	circles.children[9].scale.setTo(0, 0);
-	var hit10Tween = game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
+	var hit10Tween = game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, circleGrowDuration, Phaser.Easing.Linear.None, true );
+	sfx10.play();
 }
 
-
-
-
 function preload() {
-  game.load.image('circle', 'assets/circle2.png');
+  game.load.image('circle', 'assets/circle.png');
+  game.load.audio('sfx1', ['assets/d-in-g.mp3', 'assets/d-in-g.ogg']);
+  game.load.audio('sfx2', 'assets/Clarinet.mp3');
+  game.load.audio('sfx3', 'assets/French_Horn.mp3');
+  game.load.audio('sfx4', 'assets/Jazz_Organ.mp3');
+  game.load.audio('sfx5', 'assets/Mellotron_Choir.mp3');
+
   game.time.advancedTiming = true;
 }
 
@@ -130,6 +175,18 @@ function create() {
 	// A simple background for our game
   //game.add.sprite(0, 0, 'sky');
   game.stage.backgroundColor = RGBtoHEX(230, 230, 230);
+
+  // Sound playback event prep
+  sfx1 = game.add.audio('sfx1');
+  sfx2 = game.add.audio('sfx2');
+  sfx3 = game.add.audio('sfx3');
+  sfx4 = game.add.audio('sfx4');
+  sfx5 = game.add.audio('sfx5');
+  sfx6 = game.add.audio('sfx6');
+  sfx7 = game.add.audio('sfx7');
+  sfx8 = game.add.audio('sfx8');
+  sfx9 = game.add.audio('sfx9');
+  sfx10 = game.add.audio('sfx10');
 
 	circles = game.add.group();
 	circles.enableBody = false;
@@ -213,7 +270,7 @@ function create() {
 	for (var i=0; i < circles.children.length; i++) {
 		var theScale = 0;
 		circles.children[i].scale.setTo(theScale, theScale);
-		//game.add.tween(circles.children[i].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+		
 		circles.children[i].inputEnabled = true;
 		circles.children[i].anchor.setTo(0.5, 0.5);
 		circles.children[i].name = "circle" + i;
