@@ -1,6 +1,6 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
+<!doctype html>
+<html lang="en">
+<head>
 	<meta charset="UTF-8" />
 	<title>MICHAEL SAYS</title>
     <script src="//cdn.jsdelivr.net/phaser/2.4.3/phaser.min.js"></script>
@@ -22,6 +22,9 @@ if (_socketEnabled) {
 	  socket.on('news', function (data) {
 	    console.log(data);
 	  });
+		socket.on('hit', function(data){
+			console.log(data);
+		})
 }
 
 function RGBtoHEX(r, g, b) {
@@ -56,10 +59,10 @@ function create() {
 	var topBorder = 120;
 	var circleWidth = 160;
 	var horizSpacing = 90;
-	
+
 	var circle1 = circles.create(circleWidth*0 + horizSpacing*0.5, topBorder, 'circle');
 	circle1.tint = RGBtoHEX(207, 240, 158);
-	
+
 	var circle2 = circles.create(circleWidth*1 + horizSpacing*2, topBorder, 'circle');
 	circle2.tint = RGBtoHEX(168, 219, 168);
 
@@ -71,7 +74,7 @@ function create() {
 
 	var circle5 = circles.create(circleWidth*4 + horizSpacing*5, topBorder, 'circle');
 	circle5.tint = RGBtoHEX(207, 240, 158);
-	
+
 	var circle6 = circles.create(circleWidth*0 + horizSpacing*1, topBorder*4, 'circle');
 	circle6.tint = RGBtoHEX(168, 219, 168);
 

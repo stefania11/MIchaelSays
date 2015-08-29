@@ -63,7 +63,48 @@ io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     socket.broadcast.emit('news', data);
+
   });
+
+
+});
+
+
+var SerialPort = require("serialport").SerialPort
+var serialPort = new SerialPort("/dev/cu.usbmodem1411", {
+  baudrate: 57600
+}, false); // this is the openImmediately flag [default is true]
+
+serialPort.open(function (error) {
+  if ( error ) {
+    console.log('failed to open: '+error);
+  } else {
+    console.log('open');
+    serialPort.on('data', function(data) {
+      var str = data.toString();
+      if (str !== null){
+      var regex = /\d+/g;
+      var port = str.match(regex);
+      console.log(port);
+      if(port !== null){
+      console.log('data received: ' + data);
+      console.log(str);
+      if (str.indexOf("was just touched") > -1){
+        console.log(port[0]);
+        io.sockets.emit("hit", {'sound': port[0]})
+        console.log("TOUCH");
+      }else if (str.indexOf("no longer being") > -1){
+
+        console.log("NOPE");
+      }
+    }
+    }
+    });
+    serialPort.write("ls\n", function(err, results) {
+      console.log('err ' + err);
+      console.log('results ' + results);
+    });
+  }
 });
 
 module.exports = app;
