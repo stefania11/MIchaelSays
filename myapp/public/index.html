@@ -32,6 +32,52 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, '', { preload: preload, creat
 var circles;
 var text;
 
+// Keyboard input
+var key1;
+var key2;
+var key3;
+var key4;
+var key5;
+var key6;
+var key7;
+var key8;
+var key9;
+var key0;
+
+
+
+
+function hit1 () {
+	game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit2 () {
+	game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit3 () {
+	game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit4 () {
+	game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit5 () {
+	game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit6 () {
+	game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit7 () {
+	game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit8 () {
+	game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit9 () {
+	game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+function hit0 () {
+	game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+}
+
 function preload() {
   game.load.image('circle', 'assets/circle.png');
 }
@@ -44,6 +90,37 @@ function create() {
 	circles = game.add.group();
 	circles.enableBody = false;
 
+	// Map keyboard buttons
+	key1 = game.input.keyboard.addKey(Phaser.Keyboard.ONE);
+	key1.onDown.add(hit1, this);
+
+	key2 = game.input.keyboard.addKey(Phaser.Keyboard.TWO);
+	key2.onDown.add(hit2, this);
+	
+	key3 = game.input.keyboard.addKey(Phaser.Keyboard.THREE);
+	key3.onDown.add(hit3, this);
+	
+	key4 = game.input.keyboard.addKey(Phaser.Keyboard.FOUR);
+	key4.onDown.add(hit4, this);
+
+	key5 = game.input.keyboard.addKey(Phaser.Keyboard.FIVE);
+	key5.onDown.add(hit5, this);
+
+	key6 = game.input.keyboard.addKey(Phaser.Keyboard.SIX);
+	key6.onDown.add(hit6, this);
+
+	key7 = game.input.keyboard.addKey(Phaser.Keyboard.SEVEN);
+	key7.onDown.add(hit7, this);
+
+	key8 = game.input.keyboard.addKey(Phaser.Keyboard.EIGHT);
+	key8.onDown.add(hit8, this);
+
+	key9 = game.input.keyboard.addKey(Phaser.Keyboard.NINE);
+	key9.onDown.add(hit9, this);
+
+	key0 = game.input.keyboard.addKey(Phaser.Keyboard.ZERO);
+	key0.onDown.add(hit0, this);
+
 	/*
 	var addCircles = function(thex, they, sprite, r, g, b) {
 		console.log("Hi");
@@ -53,44 +130,51 @@ function create() {
 
 	addCircle(120, 120, 'circleSunlitsea', 207, 240, 158);
 	*/
-	var topBorder = 120;
-	var circleWidth = 160;
-	var horizSpacing = 90;
+	var topBorder = 160;
+	var leftBorder = 160;
+	var circleWidth = 90;
+	var horizSpacing = 150;
 	
-	var circle1 = circles.create(circleWidth*0 + horizSpacing*0.5, topBorder, 'circle');
+	var circle1 = circles.create(circleWidth*0 + leftBorder, topBorder, 'circle');
 	circle1.tint = RGBtoHEX(207, 240, 158);
 	
-	var circle2 = circles.create(circleWidth*1 + horizSpacing*2, topBorder, 'circle');
+	var circle2 = circles.create(circleWidth*1 + leftBorder + horizSpacing*1, topBorder, 'circle');
 	circle2.tint = RGBtoHEX(168, 219, 168);
 
-	var circle3 = circles.create(circleWidth*2 + horizSpacing*3, topBorder, 'circle');
+	var circle3 = circles.create(circleWidth*2 + leftBorder + horizSpacing*2, topBorder, 'circle');
 	circle3.tint = RGBtoHEX(121, 189, 154);
 
-	var circle4 = circles.create(circleWidth*3 + horizSpacing*4, topBorder, 'circle');
+	var circle4 = circles.create(circleWidth*3 + leftBorder + horizSpacing*3, topBorder, 'circle');
 	circle4.tint = RGBtoHEX(59, 134, 134);
 
-	var circle5 = circles.create(circleWidth*4 + horizSpacing*5, topBorder, 'circle');
+	var circle5 = circles.create(circleWidth*4 + leftBorder + horizSpacing*4, topBorder, 'circle');
 	circle5.tint = RGBtoHEX(207, 240, 158);
 	
-	var circle6 = circles.create(circleWidth*0 + horizSpacing*1, topBorder*4, 'circle');
+	var circle6 = circles.create(circleWidth*0 + leftBorder, topBorder*3, 'circle');
 	circle6.tint = RGBtoHEX(168, 219, 168);
 
-	var circle7 = circles.create(circleWidth*1 + horizSpacing*2, topBorder*4, 'circle');
+	var circle7 = circles.create(circleWidth*1 + leftBorder + horizSpacing*1, topBorder*3, 'circle');
 	circle7.tint = RGBtoHEX(121, 189, 154);
 
-	var circle8 = circles.create(circleWidth*2 + horizSpacing*3, topBorder*4, 'circle');
+	var circle8 = circles.create(circleWidth*2 + leftBorder + horizSpacing*2, topBorder*3, 'circle');
 	circle8.tint = RGBtoHEX(59, 134, 134);
 
-	var circle9 = circles.create(circleWidth*3 + horizSpacing*4, topBorder*4, 'circle');
+	var circle9 = circles.create(circleWidth*3 + leftBorder + horizSpacing*3, topBorder*3, 'circle');
 	circle9.tint = RGBtoHEX(59, 134, 134);
+
+	var circle10 = circles.create(circleWidth*4 + leftBorder + horizSpacing*4, topBorder*3, 'circle');
+	circle10.tint = RGBtoHEX(59, 134, 134);
 
 	// Do something to each and every circle
 	for (var i=0; i < circles.children.length; i++) {
-		var theScale = 1;
+		var theScale = 0;
 		circles.children[i].scale.setTo(theScale, theScale);
+		//game.add.tween(circles.children[i].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
 		circles.children[i].inputEnabled = true;
+		circles.children[i].anchor.setTo(0.5, 0.5);
 		circles.children[i].name = "circle" + i;
-		circles.children[i].events.onInputDown.add(listener, {circleName: circles.children[i].name});
+		
+		//circles.children[i].events.onInputDown.add(listener, {circleName: circles.children[i].name});
 		//circles.children[i].
 	}
 
@@ -98,12 +182,14 @@ function create() {
 
 }
 
+/*
 function listener() {
 	if (_socketEnabled) {
 		socket.emit('my other event', { circleName: this.circleName });
 	}
 	console.log('Clicked ' + this.circleName);
 }
+*/
 
 function update() {
 }
