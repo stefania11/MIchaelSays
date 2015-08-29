@@ -15,13 +15,12 @@
 
 <script type="text/javascript">
 
-var _socketEnabled = false;
+var _socketEnabled = true;
 
 if (_socketEnabled) {
 	var socket = io.connect('http://localhost:3000');
 	  socket.on('news', function (data) {
 	    console.log(data);
-	    //socket.emit('my other event', { my: 'data' });
 	  });
 }
 
@@ -58,7 +57,7 @@ function create() {
 	var circleWidth = 160;
 	var horizSpacing = 90;
 	
-	var circle1 = circles.create(circleWidth*0 + horizSpacing*1, topBorder, 'circle');
+	var circle1 = circles.create(circleWidth*0 + horizSpacing*0.5, topBorder, 'circle');
 	circle1.tint = RGBtoHEX(207, 240, 158);
 	
 	var circle2 = circles.create(circleWidth*1 + horizSpacing*2, topBorder, 'circle');
