@@ -48,38 +48,44 @@ var key0;
 
 
 function hit1 () {
-	game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	
+	if (hit1Tween !== undefined) {
+		hit1Tween.stop(false);
+	}
+	circles.children[0].scale.setTo(0, 0);
+	var hit1Tween = game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );	
 }
 function hit2 () {
-	game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit3 () {
-	game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit4 () {
-	game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit5 () {
-	game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit6 () {
-	game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit7 () {
-	game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit8 () {
-	game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit9 () {
-	game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 function hit0 () {
-	game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true )
+	game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
 }
 
 function preload() {
-  game.load.image('circle', 'assets/circle.png');
+  game.load.image('circle', 'assets/circle2.png');
+  game.time.advancedTiming = true;
 }
 
 function create() {
@@ -136,34 +142,34 @@ function create() {
 	var horizSpacing = 150;
 	
 	var circle1 = circles.create(circleWidth*0 + leftBorder, topBorder, 'circle');
-	circle1.tint = RGBtoHEX(207, 240, 158);
+	circle1.tint = '0x1abc9c';
 	
 	var circle2 = circles.create(circleWidth*1 + leftBorder + horizSpacing*1, topBorder, 'circle');
-	circle2.tint = RGBtoHEX(168, 219, 168);
+	circle2.tint = '0x2ecc71';
 
 	var circle3 = circles.create(circleWidth*2 + leftBorder + horizSpacing*2, topBorder, 'circle');
-	circle3.tint = RGBtoHEX(121, 189, 154);
+	circle3.tint = '0x3498db';
 
 	var circle4 = circles.create(circleWidth*3 + leftBorder + horizSpacing*3, topBorder, 'circle');
-	circle4.tint = RGBtoHEX(59, 134, 134);
+	circle4.tint = '0x9b59b6';
 
 	var circle5 = circles.create(circleWidth*4 + leftBorder + horizSpacing*4, topBorder, 'circle');
-	circle5.tint = RGBtoHEX(207, 240, 158);
+	circle5.tint = '0x34495e';
 	
 	var circle6 = circles.create(circleWidth*0 + leftBorder, topBorder*3, 'circle');
-	circle6.tint = RGBtoHEX(168, 219, 168);
+	circle6.tint = '0xf1c40f';
 
 	var circle7 = circles.create(circleWidth*1 + leftBorder + horizSpacing*1, topBorder*3, 'circle');
-	circle7.tint = RGBtoHEX(121, 189, 154);
+	circle7.tint = '0xe67e22';
 
 	var circle8 = circles.create(circleWidth*2 + leftBorder + horizSpacing*2, topBorder*3, 'circle');
-	circle8.tint = RGBtoHEX(59, 134, 134);
+	circle8.tint = '0xe74c3c';
 
 	var circle9 = circles.create(circleWidth*3 + leftBorder + horizSpacing*3, topBorder*3, 'circle');
-	circle9.tint = RGBtoHEX(59, 134, 134);
+	circle9.tint = '0x95a5a6';
 
 	var circle10 = circles.create(circleWidth*4 + leftBorder + horizSpacing*4, topBorder*3, 'circle');
-	circle10.tint = RGBtoHEX(59, 134, 134);
+	circle10.tint = '0x7f8c8d';
 
 	// Do something to each and every circle
 	for (var i=0; i < circles.children.length; i++) {
@@ -178,7 +184,7 @@ function create() {
 		//circles.children[i].
 	}
 
-	//text = game.add.text(100, 100, '', { fill: '#ffffff' });
+	text = game.add.text(10, 10, game.time.fps, { fill: '#ffffff' });
 
 }
 
@@ -191,7 +197,12 @@ function listener() {
 }
 */
 
+function render() {
+	//text.setText(game.time.fps);
+}
+
 function update() {
+	text.setText(game.time.fps);	
 }
 
 </script>
