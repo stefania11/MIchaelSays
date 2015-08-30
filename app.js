@@ -71,7 +71,7 @@ io.on('connection', function (socket) {
 
 
 var SerialPort = require("serialport").SerialPort
-var serialPort = new SerialPort("/dev/cu.usbmodem1411", {
+var serialPort = new SerialPort("/dev/cu.usbmodem1451", {
   baudrate: 57600
 }, false); // this is the openImmediately flag [default is true]
 
@@ -105,6 +105,15 @@ serialPort.open(function (error) {
       console.log('results ' + results);
     });
   }
+});
+
+var serialPorts = require("serialport");
+serialPorts.list(function (err, ports) {
+  ports.forEach(function(port) {
+    console.log(port.comName);
+    console.log(port.pnpId);
+    console.log(port.manufacturer);
+  });
 });
 
 module.exports = app;

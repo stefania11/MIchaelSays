@@ -24,25 +24,38 @@ if (_socketEnabled) {
 	  });
 	  socket.on('hit', function (data) {
 	    console.log(data.sound);
-	    switch(data.sound) {
-	    	case 1:
-	    		hit1();
-	    		break;
-    		case 2:
-    			hit2();
-    			break;
-  			case 3:
-    			hit3();
-    			break;
-  			case 4:
-    			hit4();
-    			break;
-  			case 5:
-    			hit5();
-    			break;
-	    	default:
-	    		break;
+	    console.log(typeof data.sound);
+	    if(data.sound == 1){
+	    	hit1();
 	    }
+	    if(data.sound == 2){
+	    						  hit2();
+	    }
+	    if(data.sound == 3){
+	    						  hit3();
+	    }
+	    if(data.sound == 4){
+	    						  hit4();
+	    }
+	    if(data.sound == 5){
+	    						  hit5();
+	    }
+	    if(data.sound == 6){
+	    						  hit6();
+	    }
+	    if(data.sound == 7){
+	    						  hit7();
+	    }
+	    if(data.sound == 8){
+	    						  hit8();
+	    }
+	    if(data.sound == 9){
+	    						  hit9();
+	    }
+	    if(data.sound == 0){
+	    						  hit0();
+	    }
+
 	  });
 }
 
@@ -85,6 +98,7 @@ function hit1 () {
 	}
 	circles.children[0].scale.setTo(0, 0);
 	var hit1Tween = game.add.tween(circles.children[0].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx1.play();
 }
 function hit2 () {
 	if (hit2Tween !== undefined) {
@@ -92,6 +106,7 @@ function hit2 () {
 	}
 	circles.children[1].scale.setTo(0, 0);
 	var hit2Tween = game.add.tween(circles.children[1].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx2.play();
 }
 function hit3 () {
 	if (hit3Tween !== undefined) {
@@ -99,6 +114,7 @@ function hit3 () {
 	}
 	circles.children[2].scale.setTo(0, 0);
 	var hit3Tween = game.add.tween(circles.children[2].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx3.play();
 }
 function hit4 () {
 	if (hit4Tween !== undefined) {
@@ -106,6 +122,7 @@ function hit4 () {
 	}
 	circles.children[3].scale.setTo(0, 0);
 	var hit4Tween = game.add.tween(circles.children[3].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx4.play();
 }
 function hit5 () {
 	if (hit5Tween !== undefined) {
@@ -113,6 +130,7 @@ function hit5 () {
 	}
 	circles.children[4].scale.setTo(0, 0);
 	var hit5Tween = game.add.tween(circles.children[4].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx5.play();
 }
 function hit6 () {
 	if (hit6Tween !== undefined) {
@@ -120,6 +138,7 @@ function hit6 () {
 	}
 	circles.children[5].scale.setTo(0, 0);
 	var hit6Tween = game.add.tween(circles.children[5].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx6.play();
 }
 function hit7 () {
 	if (hit7Tween !== undefined) {
@@ -127,6 +146,7 @@ function hit7 () {
 	}
 	circles.children[6].scale.setTo(0, 0);
 	var hit7Tween = game.add.tween(circles.children[6].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx7.play();
 }
 function hit8 () {
 	if (hit8Tween !== undefined) {
@@ -134,6 +154,7 @@ function hit8 () {
 	}
 	circles.children[7].scale.setTo(0, 0);
 	var hit8Tween = game.add.tween(circles.children[7].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx8.play();
 }
 function hit9 () {
 	if (hit9Tween !== undefined) {
@@ -141,6 +162,7 @@ function hit9 () {
 	}
 	circles.children[8].scale.setTo(0, 0);
 	var hit9Tween = game.add.tween(circles.children[8].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx9.play();
 }
 function hit0 () {
 	if (hit10Tween !== undefined) {
@@ -148,6 +170,7 @@ function hit0 () {
 	}
 	circles.children[9].scale.setTo(0, 0);
 	var hit10Tween = game.add.tween(circles.children[9].scale).to( { x: 1, y: 1 }, 1000, Phaser.Easing.Linear.None, true );
+	sfx10.play();
 }
 
 function preload() {
@@ -157,7 +180,11 @@ function preload() {
   game.load.audio('sfx3', 'assets/French_Horn.mp3');
   game.load.audio('sfx4', 'assets/Jazz_Organ.mp3');
   game.load.audio('sfx5', 'assets/Mellotron_Choir.mp3');
-
+  game.load.audio('sfx6', 'assets/Soft_Radiance.mp3');
+  game.load.audio('sfx7', 'assets/Steel_drum.mp3');
+  game.load.audio('sfx8', 'assets/Tabla.mp3');
+  game.load.audio('sfx9', 'assets/Timpani.mp3');
+  game.load.audio('sfx10', 'assets/Vibes.mp3');
   game.time.advancedTiming = true;
 }
 
